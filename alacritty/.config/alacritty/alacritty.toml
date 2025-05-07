@@ -1,0 +1,15 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+# decorations = "None"
+padding = { x = 2, y = 2 }
+decorations_theme_variant = "Dark"
+
+[font]
+normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+size = 12
+
+[colors.primary]
+background = "#0D1117"
+
