@@ -1,3 +1,5 @@
 [user]
 	email = tr.davidt@gmail.com
 	name = David Tran
+[init]
+	defaultBranch = main
