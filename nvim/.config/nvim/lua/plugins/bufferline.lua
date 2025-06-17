@@ -16,8 +16,8 @@ return {
                 },
             },
         })
-        vim.keymap.set("n", "<leader>br", "<Cmd>BufferLineCloseRight<cr>", { desc = "Delete buffers to right" })
-        vim.keymap.set("n", "<leader>bl", "<Cmd>BufferLineCloseLeft<cr>", { desc = "Delete buffers to left" })
+        vim.keymap.set("n", "<leader>br", "<Cmd>BufferLineCloseRight<cr>", { desc = "delete buffers to right" })
+        vim.keymap.set("n", "<leader>bl", "<Cmd>BufferLineCloseLeft<cr>", { desc = "delete buffers to left" })
         -- vim.cmd([[
         --   augroup MyColors
         --   autocmd!

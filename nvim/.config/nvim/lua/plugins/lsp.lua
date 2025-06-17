@@ -1,9 +1,8 @@
 return {
-    "neovim/nvim-lspconfig",
+    "mason-org/mason-lspconfig.nvim",
     dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason.nvim",
+        "neovim/nvim-lspconfig",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -28,6 +27,7 @@ return {
             vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = "LSP format" })
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "LSP code action" })
             vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = "LSP definition" })
+            vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, { desc = "LSP declaration" })
             vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { desc = "LSP implementation" })
             vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { desc = "LSP typedef" })
             vim.keymap.set('n', '<leader>gq', vim.lsp.buf.references, { desc = "LSP references quickfix" })
@@ -39,26 +39,23 @@ return {
             local line, col = unpack(vim.api.nvim_win_get_cursor(0))
             return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
         end
-
+        local installed = {
+            "lua_ls",
+            "pyright",
+            "clangd",
+            "rust_analyzer",
+            "ts_ls"
+        }
+        for _, server_name in ipairs(installed) do
+            vim.lsp.config(server_name, {
+                capabilities = caps,
+                on_attach = on_attach
+            })
+        end
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = {
-                "lua_ls",
-                "pyright",
-                "clangd",
-            },
-            handlers = {
-                function(server_name) -- default handler
-                    require("lspconfig")[server_name].setup {
-                        capabilities = caps,
-                        on_attach = on_attach,
-                    }
-                end,
-            }
+            ensure_installed = installed
         })
-        -- require("lspconfig").lua_ls.setup({
-        --     on_attach = on_attach
-        -- })
         cmp.setup({
             snippet = {
                 expand = function(args)
