@@ -36,8 +36,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         if require("lazy.status").has_updates() then
             require("lazy").update({ show = false, })
-        else
-            vim.notify("lazyvim up to date")
+        -- else
+        --     vim.notify("lazyvim up to date")
         end
     end,
 })
@@ -73,9 +73,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
         end
         if #removed_files > 0 then
             vim.notify("removed sessions: " .. table.concat(removed_files, "\n"))
-        else
-            vim.notify("no sessions removed")
+            -- else
+            --     vim.notify("no sessions removed")
         end
     end
 })
-

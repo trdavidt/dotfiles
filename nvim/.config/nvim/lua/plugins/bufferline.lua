@@ -2,12 +2,6 @@ return {
     'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
-    -- keys = {
-    --  { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete buffers to right" },
-    --  { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete buffers to left" },
-    --  { "<leader>bj>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
-    --  { "<leader>bk>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
-    -- },
     config = function()
         require("bufferline").setup({
             highlights = {
