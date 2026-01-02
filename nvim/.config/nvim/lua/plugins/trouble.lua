@@ -33,5 +33,23 @@ return {
       "<cmd>Trouble qflist toggle<cr>",
       desc = "Quickfix List (Trouble)",
     },
+    {
+      "<leader>xn",
+      function()
+        if require("trouble").is_open() then
+          require("trouble").next({ skip_groups = true, jump = true })
+        end
+      end,
+      desc = "Trouble next item",
+    },
+    {
+      "<leader>xp",
+      function()
+        if require("trouble").is_open() then
+          require("trouble").prev({ skip_groups = true, jump = true })
+        end
+      end,
+      desc = "Trouble prev item",
+    },
   },
 }
