@@ -36,16 +36,16 @@ return {
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500 },
     -- Customize formatters
-    formatters = {
-      stylua = {
-        append_args = {
-          "--indent-type",
-          "Spaces",
-          "--indent-width",
-          "2",
-        },
-      },
-    },
+    -- formatters = {
+    --   stylua = {
+    --     append_args = {
+    --       "--indent-type",
+    --       "Spaces",
+    --       "--indent-width",
+    --       "2",
+    --     },
+    --   },
+    -- },
   },
   init = function()
     -- If you want the formatexpr, here is the place to set it

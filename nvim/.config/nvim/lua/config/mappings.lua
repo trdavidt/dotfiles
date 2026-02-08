@@ -1,6 +1,8 @@
 -- editor
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "netrw" })
+vim.keymap.set("n", "<C-/>", "gcc", { desc = "comment line", remap = true })
+vim.keymap.set("v", "<C-/>", "gc", { desc = "comment lines", remap = true })
 vim.keymap.set("n", "<C-_>", "gcc", { desc = "comment line", remap = true })
 vim.keymap.set("v", "<C-_>", "gc", { desc = "comment lines", remap = true })
 vim.keymap.set(

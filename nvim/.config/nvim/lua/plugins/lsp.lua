@@ -40,6 +40,7 @@ return {
       "rust_analyzer",
       "ts_ls",
       "bashls",
+      "docker_language_server",
     }
     for _, server_name in ipairs(installed) do
       vim.lsp.config(server_name, {
