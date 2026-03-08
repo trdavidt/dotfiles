@@ -6,8 +6,8 @@ return {
     config = function()
       require("gruvbox").setup({
         palette_overrides = {
-          light1 = "#d4d4d4",
-          bg0 = "#1f1f1f",
+          light1 = "#d8d8d8",
+          dark0_hard = "#181818",
         },
         contrast = "hard",
       })
