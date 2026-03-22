@@ -1,6 +1,7 @@
 alias c='clear'
 alias cls='clear'
 alias ll='ls -alhF'
+alias h='history | grep'
 
 # List all installed rpm
 alias rpmlist="rpm --query --all --queryformat '%{NAME}.%{ARCH}: %{SUMMARY}\n'"
