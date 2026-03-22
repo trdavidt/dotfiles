@@ -1,15 +1,16 @@
-[env]
-TERM = "xterm-256color"
+[general]
+import = [
+    "~/.config/alacritty/themes/gruvbox_dark.toml"
+]
 
 [window]
-# decorations = "None"
 decorations_theme_variant = "Dark"
-dynamic_title = true
 
 [font]
 normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
 size = 12
 
 [colors.primary]
-# background = "#0d1117"
+background = "#181818"
+foreground = "#d8d8d8"
 
