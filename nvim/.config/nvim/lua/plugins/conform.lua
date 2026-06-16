@@ -24,6 +24,7 @@ return {
       javascript = { "prettierd", "prettier", stop_after_first = true },
       go = { "gofmt" },
       c = { "clang-format" },
+      cpp = { "clang-format" },
       sh = { "shfmt" },
       rust = { "rustfmt" },
       html = { "prettier" },
