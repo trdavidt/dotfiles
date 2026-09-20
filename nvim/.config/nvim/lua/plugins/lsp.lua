@@ -34,13 +34,14 @@ return {
     end
 
     local installed = {
-      "lua_ls",
-      "pyright",
-      "clangd",
-      "rust_analyzer",
-      "ts_ls",
       "bashls",
+      "clangd",
       "docker_language_server",
+      "gopls",
+      "ts_ls",
+      "pyright",
+      "rust_analyzer",
+      "lua_ls",
     }
     for _, server_name in ipairs(installed) do
       vim.lsp.config(server_name, {
